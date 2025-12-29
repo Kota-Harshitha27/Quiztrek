@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - QuizTrek</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar1">
+    <div><h1>QuizTrek</h1></div>
+    <div class="nav-links1">
+      <div class="nav-op1"><a href="/home/home.html">Home</a></div>
+      <div class="nav-op1"><a href="/profile/profile.html">Profile</a></div>
+      <div class="nav-op1"><a href="/home/home.html#classtabs">Classes</a></div>
+      <div class="nav-op1"><a href="/dashboard/dashboard.html">dashboard</a></div>
+    </div>
+  </div>
+
+  <!-- Page content: add wrapper classes so header space is reserved -->
+  <main class="page-with-fixed-header container">
+
+    <!-- Greeting card -->
+    <div class="card">
+      <div class="greet">
+        <div><img id="profile-pic" src="/images/file.jpeg" alt="Profile" class="profile-pic"></div>
+        <div>
+          <h5 class="mb-0" id="welcome-text">Welcome</h5>
+          <small id="user-meta">Class: - | Username: -</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quizzes & stats -->
+    <div class="card Quiz-attempts">
+      <div>
+        <h4>No. of Quizzes Attempted</h4>
+        <p id="Quizzes_attempted">-</p>
+      </div>
+
+      <div>
+        <h5 id="current-streak">Current Streak 🔥 : -</h5>
+        <h5 id="max-streak">Max streak : -</h5>
+      </div>
+
+      <div>
+        <h4>Accuracy</h4>
+        <p id="accuracy">-</p>
+      </div>
+    </div>
+
+    <!-- Two-column section: leaderboard (left) and to-do (right) -->
+    <div class="two-col">
+      <div class="card leaderboard">
+        <h3>🏆 leaderboard</h3>
+        <table id="leaderboard-table" border="1">
+          <thead>
+            <tr>
+              <th>s.no</th>
+              <th>Username</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card to-do">
+        <h3>To-do-list</h3>
+            <div id="task-controls">
+                <input id="new-task-text" placeholder="New task" style="padding:6px; width:70%; margin-right:8px" />
+                <button id="add-task-btn">Add Task</button>
+            </div>
+            
+  
+        <table id="todo-table" border="1">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Task</th>
+              <th>Completed</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Recent quizzes -->
+    <div class="card">
+      <div class="past" id="past">
+        <h4>Recent Attempted Quizzes</h4>
+        <ul id="recent-quizzes">
+          <!-- filled by JS -->
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Your dashboard script (leave path as-is if script is in same folder) -->
+  <script src="dashboard.js"></script>
+</body>
+</html>

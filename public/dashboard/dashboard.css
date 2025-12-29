@@ -1,0 +1,160 @@
+/* Reset & base */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(173,141,214);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden; /* prevent horizontal overflow */
+}
+
+/* ---------- Navbar ---------- */
+.navbar1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 76px;                /* header height */
+  background-color: rgb(216,189,224);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.navbar1 h1 {
+  font-size: 1.6rem;
+  color: rgb(60,30,70);
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  flex: 0 0 auto;
+}
+
+.nav-links1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-left: 1rem;
+}
+
+.nav-op1 { display: block; }
+.navbar1 .nav-op1 a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.navbar1 .nav-op1 a:hover {
+  background-color: rgb(190,160,200);
+  color: white;
+}
+
+/* ---------- Page container & spacing ---------- */
+/* reserve space for the fixed header so content is not hidden under it */
+.page-with-fixed-header { padding-top: 92px; } /* 76px header + small gap */
+
+/* center content and restrict max width for better reading */
+.container {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ---------- Generic card ---------- */
+.card {
+  box-shadow: 5px 5px 8px rgba(0,0,0,0.18);
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 0;         /* container gap handles spacing */
+}
+
+/* profile image and greet layout */
+.greet {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.profile-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ---------- Quiz attempts area: 3 equal columns ---------- */
+.Quiz-attempts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  border-radius: 10px;
+}
+.Quiz-attempts > div {
+  padding: 18px;
+  /* subtle divider on middle column only */
+  border-left: none;
+}
+.Quiz-attempts > div + div { /* from second column on, add small left border */
+  border-left: 1px solid rgba(0,0,0,0.12);
+  padding-left: 20px;
+}
+
+/* ---------- Two-column layout for leaderboard & to-do ---------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* make leaderboard & todo visually consistent */
+.leaderboard h3, .to-do h3 { margin-top: 0; }
+
+/* table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+td, th {
+  padding: 8px;
+  border: 1px solid rgb(200,200,200);
+}
+
+/* ---------- Recent quizzes list ---------- */
+.past h4 { margin-top: 0; }
+#recent-quizzes { list-style: none; padding-left: 0; margin: 0; }
+
+/* ---------- Utility (full-width card) ---------- */
+/* If you want a card to span both columns inside .two-col use .full */
+.two-col .full { grid-column: 1 / -1; }
+
+/* ---------- Responsive breakpoints ---------- */
+@media (max-width: 900px) {
+  .container { width: calc(100% - 30px); max-width: 980px; }
+  .Quiz-attempts { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .page-with-fixed-header { padding-top: 100px; } /* allow extra vertical space on small screens */
+  .navbar1 h1 { font-size: 1.35rem; }
+  .navbar1 .nav-op1 a { font-size: 0.95rem; padding: 6px 8px; }
+}
+
+@media (max-width: 520px) {
+  .container { width: calc(100% - 20px); gap: 14px; }
+  .profile-pic { width: 52px; height: 52px; }
+  .navbar1 { padding: 10px 4%; height: auto; align-items: flex-start; }
+  .page-with-fixed-header { padding-top: 120px; }
+}

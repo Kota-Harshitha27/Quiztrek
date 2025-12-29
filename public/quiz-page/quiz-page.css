@@ -1,0 +1,174 @@
+
+html,body
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+:root{
+  --brand:#6A1B9A;
+  --brand-dark:#53106f;
+}
+
+body {
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f3f4f6;
+}
+
+/* Header */
+header {
+  background: #c8b2dd;
+  color:black;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  height: 10vh;
+}
+
+header img.logo {
+  height:50px;
+  width:50px;
+  border-radius:8px;
+  object-fit:cover;
+}
+
+header h1 {
+  font-weight: bolder;
+  font-size:xx-large;
+  
+  margin:0;
+  flex:1;
+}
+
+.bar-right {
+  display:flex;
+  align-items:center;
+  gap:15px;
+  font-size: large;
+}
+
+/* Timer */
+.timer {
+  font-size:16px;
+  background:var(--brand);
+  color:white;
+  padding:4px 10px;
+  border-radius:6px;
+  font-weight:600;
+}
+
+/* Container */
+.container-main {
+    max-width:950px;
+    margin:30px auto;
+    padding:0 10px;
+    max-height: calc(90vh - 120px); /* 100vh minus header + footer approx */
+    overflow-y: auto;
+}
+.c1
+{
+    padding: 10px;
+    background-image: url(../images/class-interface-background.png);
+    background-size: cover;
+    
+}
+
+/* Quiz Panel */
+.quiz-panel {
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* Meta info */
+.meta .case, .meta .question {
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+.imagebox img {
+  max-width:100%;
+  height:auto;
+  border-radius:10px;
+  max-height:300px;
+  object-fit:cover;
+}
+
+/* Options */
+.options {
+  margin-top:12px;
+}
+
+.options .opt {
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ececec;
+  margin-bottom:10px;
+  background:#fafafa;
+  cursor:pointer;
+  transition: all 0.2s;
+}
+
+.options .opt:hover {
+  background: #f0e6fa;
+}
+
+.options input[type="radio"] {
+  margin-top:3px;
+}
+
+/* Buttons */
+.btnbar button {
+  border-radius:8px;
+  padding:10px 16px;
+  font-weight:600;
+  transition:0.2s;
+}
+
+.btn-brand {
+  background:var(--brand);
+  color:white;
+  border:none;
+}
+
+.btn-brand:hover {
+  background: var(--brand-dark);
+}
+
+.btn-ghost {
+  background:transparent;
+  border:2px solid var(--brand);
+  color:var(--brand);
+}
+
+.btn-ghost:hover {
+  background: var(--brand);
+  color:white;
+}
+
+/* Footer */
+footer {
+  margin:30px auto;
+  text-align:center;
+  color:#666;
+  font-weight:600;
+  
+}
+
+/* Responsive */
+@media (max-width:720px){
+  header h1{font-size:1rem;}
+  .bar-right {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+  }
+}

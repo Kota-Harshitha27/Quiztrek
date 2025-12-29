@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuizTrek — Scoreboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="scoreboard.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="quiztrek_logo.png" alt="QuizTrek" class="logo" onerror="this.style.display='none'"/>
+    <h1>QuizTrek — Scoreboard</h1>
+  </header>
+
+  <div class="scorewrap" id="scorewrap">
+    <h2>Your Results</h2>
+
+    <div class="circle-container">
+      <div class="circle">
+        <svg><circle class="bg" cx="70" cy="70" r="70"></circle><circle class="progress" id="memorize" cx="70" cy="70" r="70"></circle></svg>
+        <span id="memorizeScore">0%</span><div>Memorization</div>
+      </div>
+      <div class="circle">
+        <svg><circle class="bg" cx="70" cy="70" r="70"></circle><circle class="progress" id="critical" cx="70" cy="70" r="70"></circle></svg>
+        <span id="criticalScore">0%</span><div>Criticalthinking</div>
+      </div>
+      <div class="circle">
+        <svg><circle class="bg" cx="70" cy="70" r="70"></circle><circle class="progress" id="application" cx="70" cy="70" r="70"></circle></svg>
+        <span id="applicationScore">0%</span><div>Application</div>
+      </div>
+    </div>
+
+    <div class="summary">
+      <p><strong>Total Questions:</strong> <span id="totalQ"></span></p>
+      <p><strong>Attempted:</strong> <span id="attempted"></span></p>
+      <p><strong>Correct:</strong> <span id="correct"></span></p>
+      <p><strong>Wrong:</strong> <span id="wrong"></span></p>
+      <p><strong>Total Score:</strong> <span id="totalScore"></span></p>
+    </div>
+
+    <div class="btns">
+      <button class="btn btn-primary" id="explainBtn">Show Explanations</button>
+      <button class="btn btn-outline-primary" id="retryBtn">Reattempt Quiz</button>
+      <button class="btn btn-outline-secondary" id="homeBtn">Home</button>
+    </div>
+
+    <div id="reviewSection">
+      <h3>📘 Review Your Answers</h3>
+      <div id="reviewContent"></div>
+    </div>
+  </div>
+  <script src="scoreboard.js"></script>
+
+  <!-- <script>
+    function animateCircle(circleId, value) {
+      const circle = document.getElementById(circleId);
+      const offset = 440 - (440 * value) / 100;
+      circle.style.strokeDashoffset = offset;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const data = JSON.parse(localStorage.getItem("quiztrek_results"));
+      if (!data) {
+        document.getElementById("scorewrap").innerHTML = `
+          <h2>No results found</h2>
+          <p>Please take the quiz first.</p>
+          <button class="btn btn-primary" onclick="location.href='quizpage.html'">Start Quiz</button>`;
+        return;
+      }
+
+      // Display scores
+      const totalQ = data.totalQuestions ?? 10;
+      const attempted = data.attempted ?? 0;
+      const correct = data.correct ?? 0;
+      const wrong = attempted - correct;
+      const totalScore = data.totalScore ?? Math.round((correct / totalQ) * 100);
+      const mental = data.mental ?? 0;
+      const performance = data.performance ?? 0;
+      const reasoning = data.reasoning ?? 0;
+
+      document.getElementById("totalQ").textContent = totalQ;
+      document.getElementById("attempted").textContent = attempted;
+      document.getElementById("correct").textContent = correct;
+      document.getElementById("wrong").textContent = wrong;
+      document.getElementById("totalScore").textContent = totalScore + "%";
+
+      document.getElementById("mentalScore").textContent = mental + "%";
+      document.getElementById("performanceScore").textContent = performance + "%";
+      document.getElementById("reasoningScore").textContent = reasoning + "%";
+
+      setTimeout(() => {
+        animateCircle("mentalCircle", mental);
+        animateCircle("performanceCircle", performance);
+        animateCircle("reasoningCircle", reasoning);
+      }, 300);
+
+      // SHOW EXPLANATIONS
+      document.getElementById("explainBtn").addEventListener("click", () => {
+        const reviewSection = document.getElementById("reviewSection");
+        const reviewContent = document.getElementById("reviewContent");
+        reviewSection.style.display = "block";
+
+        if (!data.questions || !data.userAnswers) {
+          reviewContent.innerHTML = "<p>No detailed data available for review.</p>";
+          return;
+        }
+
+        reviewContent.innerHTML = data.questions.map((q, i) => {
+          const selected = data.userAnswers[i];
+          const isCorrect = selected === q.answer;
+          return `
+            <div class='question-box'>
+              <strong>Q${i + 1}:</strong> ${q.question}<br><em>${q.caseStudy}</em><br>
+              ${q.options.map((opt, idx) => `
+                <div style='background:${
+                  idx === selected ? (isCorrect ? "#d4f8d4" : "#f8d4d4") : "#f1f1f1"
+                }; padding:6px 10px; border-radius:6px;'>${String.fromCharCode(97 + idx)}) ${opt}</div>
+              `).join("")}
+              <p><strong>Explanation:</strong> ${q.explanation}</p>
+            </div>`;
+        }).join("");
+      });
+
+      // REATTEMPT QUIZ
+      document.getElementById("retryBtn").addEventListener("click", () => {
+        localStorage.removeItem("quiztrek_results");
+        window.location.href = "quizpage.html";
+      });
+
+      // HOME BUTTON
+      document.getElementById("homeBtn").addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    });
+  </script> -->
+</body>
+</html>
