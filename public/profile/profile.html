@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <!-- Navbar section -->
+
+        <div class="navbar1">
+        	<div><h1>QuizTrek</h1></div>
+            <div class="nav-links">
+                
+                <div class="nav-op"><a href="/home/home.html">Home</a></div>
+                <div class="nav-op"><a href="/profile/profile.html">Profile</a></div>
+                <div class="nav-op"><a href="/home/home.html#classtabs">Classes</a></div>
+                <div class="nav-op"><a href="/dashboard/dashboard.html">dashboard</a></div>
+            </div>
+        </div>
+
+  
+<div style="padding-top: 20vh;">
+  <div class="profile-card">
+    <img src="../images/sample_profile.png" alt="" class="profile-img" id="profileImage" title="Click to change image">
+    <input type="file" id="imgInput" accept="image/*">
+    
+    <h2 id="userName"></h2>
+
+    <div class="details" id="detailsSection">
+      <p><strong>Parent Name:</strong> <span id="parentName"></span></p>
+      <p><strong>Class:</strong> <span id="className"></span></p>
+      <p><strong>Date of Birth:</strong> <span id="dob"></span></p>
+      <p><strong>Contact:</strong> <span id="contact"></span></p>
+      <p><strong>State:</strong> <span id="state"></span></p>
+      <p><strong>Password:</strong> <span id="password"></span></p>
+    </div>
+
+    <button class="btn" id="editBtn">Edit Profile</button>
+  </div>
+  </div>
+<script src="profile.js"></script>
+</body>
+</html>

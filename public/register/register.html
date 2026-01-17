@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="register.css"></link>
+    </head>
+    <body>
+        <div id="box" class="box">
+            <h2 style="text-align: center;">Register !!</h2>
+            <table>
+                <tr>
+                    <td><p id="fullName" class="field">Full name : </p></td>
+                    <td><input id="name" class="input"></td>
+                </tr>
+                <tr>
+                    <td><p id="parent" class="field">Parent name : </p></td>
+                    <td><input id="parentName" class="input"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="class" class="field">Class :</p></td>
+                    <td><select id="grade" class="input">
+                            <option selected>-- select grade --</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p id="DOB" class="field">Date of Birth :</p></td>
+                    <td><input id="dob" class="input" type="date"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="contact" class="field">Contact :</p></td>
+                    <td><input id="contactNum" class="input" ></p></td>
+                </tr>
+                <tr>
+                    <td><p id="password" class="field">Password : </p></td>
+                    <td><input id="pass" class="input" type="password"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="confirmPassword" class="field">Confirm password : </p></td>
+                    <td><input id="confirmPass" class="input" type="password"></p></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><p><button id="registerButton">Register</button></p></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><p>Already have an account ? <a style="color :black;" href="../login/login.html">login</a></p></td>
+                </tr>
+            </table>    
+        </div>
+        <script src="register.js"></script>
+    </body>
+</html>

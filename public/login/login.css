@@ -1,0 +1,65 @@
+body,html
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+   background-image: url(../images/login-background.jpg);
+    background-size: cover;
+}
+
+.box
+{
+    color: rgb(5, 5, 5);
+    border: 1px solid rgb(8, 8, 8);
+    border-radius: 5%;
+
+    margin-right: 5%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    
+    float: right;
+    padding: 3%;
+
+}
+table
+{
+   color: rgb(3, 3, 3); 
+}
+td
+{
+    width: auto-content;
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+    font-weight: bold;
+}
+
+#loginButton
+{
+    width: 30%;
+    font-size: large;
+}
+
+
+
+.box{
+  animation: slideIn 2s;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(+70%); }
+  to { transform: translateX(0); }
+}
+
+/* .box{
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity: 2;}
+} */

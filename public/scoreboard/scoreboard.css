@@ -1,0 +1,16 @@
+:root { --brand: #6A1B9A; --brand-dark: #53106f; }
+    body { font-family: Arial, Helvetica, sans-serif; background: linear-gradient(180deg, #f6f0fb, #fff); margin: 0; }
+    header { background: linear-gradient(90deg, var(--brand), var(--brand-dark)); color: #fff; padding: 12px 20px; display: flex; align-items: center; gap: 12px; }
+    header img.logo { height: 44px; width: 44px; border-radius: 6px; object-fit: cover; }
+    .scorewrap { max-width: 850px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); text-align: center; }
+    .circle-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin: 30px 0; }
+    .circle { position: relative; width: 140px; height: 140px; }
+    .circle svg { transform: rotate(-90deg); width: 140px; height: 140px; }
+    .circle circle { fill: none; stroke-width: 10; stroke-linecap: round; }
+    .circle .bg { stroke: #e6e6e6; }
+    .circle .progress { stroke: var(--brand); stroke-dasharray: 440; stroke-dashoffset: 440; transition: stroke-dashoffset 1s ease; }
+    .circle span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 22px; font-weight: bold; }
+    .summary { margin-top: 30px; font-size: 17px; }
+    .btns { display: flex; gap: 12px; justify-content: center; margin-top: 25px; }
+    #reviewSection { display: none; text-align: left; margin-top: 40px; }
+    .question-box { background: #fafafa; border: 1px solid #ddd; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
