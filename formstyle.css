@@ -1,0 +1,79 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+body
+{
+    background-color: aqua;
+}
+
+.form
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 350%;
+    width: 50%;
+    background-color: aliceblue;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 2px rgb(254,236,164,1);
+}
+.form h1
+{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #d642cf;
+}
+
+.form .input
+{
+    margin-bottom: 15px;
+}
+
+.form .input input[type="text"],
+.form textarea,
+.form .input input[type="password"]
+{
+    width: 75%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.form textarea
+{
+    height: 50px;
+    resize: none;
+}
+
+.form .btn input[type="submit"]
+{ 
+    border: 0;
+    margin-top: 30px;  
+    background-color: blueviolet;
+    border-radius: 30px;
+    width: 75%;
+    padding: 10px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer; 
+}
+
+.form #error_msg
+{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0px;
+    background-color: #d81e1e;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}

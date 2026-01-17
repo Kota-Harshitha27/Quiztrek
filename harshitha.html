@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>new form</title></head>
+<body>
+<form action="harshitha.php" method="post" enctype="multipart/form-data" onsubmit="return validation()">
+ <div>
+ <label for="fname">fullname</label>
+ <input type="text" name="fname" id="fname" >
+ </div>
+ <div>
+ <label for="village">village</label>
+ <input type="text" name="village" id="village">
+ </div>
+ <div>
+ <label for="number">number</label>
+ <input type="number" name="number" id="number">
+ </div>
+ <div>
+ <label for="gender-female">gender </label>
+ <input type="radio" value="female" name="gender" id="gender-female">female
+ <input type="radio" value="male" name="gender" id="gender-male">male
+ </div>
+ <div>
+ <lable for="file">uploadphoto</labe>
+ <input type="file" name="photo" >
+ </div>
+ <button type="submit">registor</button>
+ <button type="reset">reset</button>
+</form>
+ 
+</body>
+<script>
+function setCookie(name, value, days = 1) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 1 day
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
+}
+
+function validation()
+{
+ let fname=document.getElementById("fname").value.trim();
+ let village=document.getElementById("village").value.trim();
+ let number=document.getElementById("number").value.trim();
+ let gender=document.querySelector('input[name="gender"]:checked');
+ let namePattern = /^[A-Za-z\s]+$/;
+ if (fname === "") {
+        alert("Name cannot be empty.");
+        return false;
+      }
+       if (!namePattern.test(fname)) {
+    alert("Name should only contain letters.");
+    return false;
+  }
+      if (village === "") {
+        alert("village cannot be empty.");
+        return false;
+      }
+      if (number === "") {
+        alert("number cannot be empty.");
+        return false;
+      }
+       if(number.length !=10){
+        alert("enter number of 10 digits");
+        return false;
+     }
+       
+     
+      if (!gender) {
+        alert("Please select a gender.");
+        return false;
+      }
+     
+     setCookie("fname", fname);
+  setCookie("number", number);
+  
+   console.log("Cookies after setting: ", document.cookie);
+    alert("You have registered successfully!");
+      return true;
+    event.preventDefault();  // Use true if you want to allow submission
+ }
+ window.onload = function() {
+  let cookies = document.cookie.split(';');
+  cookies.forEach(cookie => {
+    let [key, value] = cookie.trim().split('=');
+    if (key === 'fname') document.getElementById("fname").value = value;
+    if (key === 'number') document.getElementById("number").value = value;
+  });
+};
+ </script>
+ </body>
+</html>

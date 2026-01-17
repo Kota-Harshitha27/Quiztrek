@@ -1,0 +1,1 @@
+w is used to write a data to a file and r is used to read from the file

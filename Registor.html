@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <style>
+    * {
+      margin: 1px;
+      padding: 5px;
+    }
+    body {
+      background-image: url('https://st2.depositphotos.com/2769299/7314/i/450/depositphotos_73146765-stock-photo-a-stack-of-books-on.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 8px solid black;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+ <form method="POST" action="Registor.php" onsubmit="return validateForm()">
+    <table>
+      <h1><b><u>Registration Form</u></b></h1>
+      <tr>
+        <td><label>Name:</label></td>
+        <td><input type="text" id="name" name="name" placeholder="Enter name"></td>
+      </tr>
+      <tr>
+        <td><label>Email ID:</label></td>
+        <td><input type="text" id="email"  name="email" placeholder="Enter email id"></td>
+      </tr>
+      <tr>
+        <td><label>Password:</label></td>
+        <td><input type="password" id="password" name="password" placeholder="Enter password"></td>
+      </tr>
+      <tr>
+        <td><label>Address:</label></td>
+        <td><textarea id="address" name="address" placeholder="Enter Address"></textarea></td>
+      </tr>
+      <tr>
+        <td><label>Mobile number:</label></td>
+        <td><input type="text" id="mobile" name="mobile" placeholder="Enter Mobile Number"></td>
+      </tr>
+      <tr>
+        <td><label>Gender:</label></td>
+        <td>
+          <input type="radio" name="gender" value="female"> Female
+          <input type="radio" name="gender" value="male"> Male
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1"></td>
+        <td>
+          <button style="border-radius:15px" type="submit">Submit</button>
+        </td>
+        <td>
+          <button style="border-radius:15px" type="reset" onclick="clearMessage()">Reset</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+ 
+    function validateForm() {
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var password = document.getElementById("password").value.trim();
+      var address = document.getElementById("address").value.trim();
+      var mobile = document.getElementById("mobile").value.trim();
+      var gender = document.querySelector('input[name="gender"]:checked');
+
+      if (name === "") {
+        alert("Name cannot be empty.");
+        return false;
+      }
+      if (email === "") {
+        alert("Email cannot be empty.");
+        return false;
+      }
+      if (password === "") {
+        alert("Password cannot be empty.");
+        return false;
+      }
+      if (address === "") {
+        alert("Address cannot be empty.");
+        return false;
+      }
+      if (mobile === "") {
+        alert("Mobile number cannot be empty.");
+        return false;
+      }
+      if (!gender) {
+        alert("Please select a gender.");
+        return false;
+      }
+
+      alert("You have registered successfully!");
+      return true; // Use true if you want to allow submission
+    }
+
+    function clearMessage() {
+      // Optionally add any cleanup on reset
+    }
+  </script>
+</body>
+</html>
+

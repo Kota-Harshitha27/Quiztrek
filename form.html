@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formstyle.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="form">
+        <h1>Regestration form</h1>
+        <div id="error_msg"></div>
+        <form action="welcome.html" id="myform" onsubmit="return validation(event)">
+         <div class="input">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter name">
+         </div>
+        <div class="input">
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter Email">
+        </div>
+        <div class="input">
+            <label for="phone">Phone:</label>
+            <input type="text" placeholder="Enter Mobile Number" id="phone">
+        </div>
+        <div class="input">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter Password">
+        </div>
+        <div class="input">
+            <label for="">Gender:</label>
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female">Female
+        </div>
+        <div class="input">
+            <label for="">Upload file:</label>
+            <input type="file">
+        </div>
+        <div class="input">
+            <label for="msg">Text Area</label>
+            <textarea id="msg" placeholder="Message"></textarea> 
+        </div>
+        <div class="btn">
+            <input type="submit">
+        </div>
+        </form>
+    </div> 
+</body>
+</html>

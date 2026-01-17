@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment 1 - Online Book Stall</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    nav {
+      height: 150px;
+      background-color: #b8904a;
+      border-bottom: 2px solid black;
+      padding: 15px 30px;
+    }
+
+    nav .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav h1 {
+      font-size: 38px;
+      color: white;
+      text-align: center;
+      flex: 1;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      list-style: none;
+      margin-top: 15px;
+      font-size: 20px;
+    }
+
+    nav ul li {
+      color: white;
+    }
+
+    /* ---------- SIDEBAR ---------- */
+    aside {
+      width: 160px;
+      height: 500px;
+      background-color: #6f542a;
+      float: left;
+      padding-top: 30px;
+    }
+
+    aside ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      padding-left: 20px;
+    }
+
+    aside ul li {
+      font-size: 18px;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .box1 {
+      width: calc(100% - 160px);
+      height: 500px;
+      float: right;
+      position: relative;
+      background-image: url('/home/user/Pictures/bookimage.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    /* DARK OVERLAY */
+    .box1::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    #contentFrame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: none;
+      background-color: white;
+      z-index: 2;
+    }
+
+    /* ---------- LINKS ---------- */
+    a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+      padding: 5px 8px;
+      transition: all 0.3s ease;
+    }
+
+    /* HOVER EFFECT */
+    a:hover {
+      background-color: rgba(255,255,255,0.2);
+      border-radius: 6px;
+      letter-spacing: 1px;
+    }
+
+    /* UNDERLINE ANIMATION */
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: yellow;
+      transition: width 0.3s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------- WELCOME TEXT HOVER ---------- */
+    .content h1 {
+      font-size: 32px;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .content h1:hover {
+      transform: scale(1.05);
+      text-shadow: 2px 2px 10px rgba(255,255,255,0.8);
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="top">
+        <img src="rguktLogo.png" class="logo" alt="Logo">
+        <h1><u>Online Book Stall</u></h1>
+        <div style="width:80px;"></div>
+      </div>
+
+      <ul>
+        <li>Home</li>
+        <li><a href="login.html" target="contentFrame" onclick="showIframe()">Login</a></li>
+        <li><a href="Registor.html" target="contentFrame" onclick="showIframe()">Register</a></li>
+        <li><a href="cataloge.html" target="contentFrame" onclick="showIframe()">Catalogue</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <aside>
+    <ul>
+      <li><a href="cse.html" target="contentFrame" onclick="showIframe()">CSE</a></li>
+      <li><a href="ece.html" target="contentFrame" onclick="showIframe()">ECE</a></li>
+      <li><a href="eee.html" target="contentFrame" onclick="showIframe()">EEE</a></li>
+      <li><a href="mech.html" target="contentFrame" onclick="showIframe()">MECH</a></li>
+      <li><a href="civil.html" target="contentFrame" onclick="showIframe()">CIVIL</a></li>
+    </ul>
+  </aside>
+
+  <div class="box1">
+    <div class="content" id="welcomeMessage">
+      <h1>Welcome to Book Stall</h1>
+    </div>
+    <iframe name="contentFrame" id="contentFrame"></iframe>
+  </div>
+
+  <script>
+    function showIframe() {
+      document.getElementById("welcomeMessage").style.display = "none";
+      document.getElementById("contentFrame").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
+

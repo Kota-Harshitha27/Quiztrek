@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    * {
+      margin: 1px;
+      padding: 5px;
+    }
+    body {
+      background-image: url('https://www.creativefabrica.com/wp-content/uploads/2023/07/26/Open-Book-In-A-Library-Aesthetic-75491019-1.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 8px solid black;
+      height: 600px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <form onsubmit="return validateForm()">
+    <table>
+      <h1><u><b>Login</b></u></h1>
+      <h2>Enter Login Details</h2>
+      <tr>
+        <td><label>User ID:</label></td>
+        <td><input type="text" id="userid" name="userid" placeholder="Enter User Id"></td>
+      </tr>
+      <tr>
+        <td><label>Password:</label></td>
+        <td><input type="password" id="password" name="password" placeholder="Enter password"></td>
+      </tr>
+      <tr>
+        <td colspan="1"></td>
+        <td>
+          <button style="border-radius:15px" type="submit">Submit</button>
+        </td>
+        <td>
+          <button style="border-radius:15px" type="reset" name="reset">Reset</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+    function validateForm() {
+      var userid = document.getElementById("userid").value.trim();
+      var password = document.getElementById("password").value.trim();
+
+      if (userid === "") {
+        alert("User ID cannot be empty.");
+        return false;
+      }
+
+      if (password === "") {
+        alert("Password cannot be empty.");
+        return false;
+      }
+
+      alert("You have entered successfully!");
+      return false; // allow form submission if needed
+    }
+  </script>
+</body>
+</html>
+
